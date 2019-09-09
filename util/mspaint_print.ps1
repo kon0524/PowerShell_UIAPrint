@@ -113,6 +113,9 @@ function MSPAINT_Print($window, $app_dialog){
 		return
 	}
 	
+	# なぜかここで少し待たないと印刷ボタンが押されない...
+	Start-Sleep -Millisecond 500
+
 	# 印刷ボタンを押下(Alt+p)
 	Start-Sleep -Millisecond 200
 	$app_dialog.Keyboard.KeyDown([WindowsInput.Native.VirtualKeyCode]::MENU) >$null

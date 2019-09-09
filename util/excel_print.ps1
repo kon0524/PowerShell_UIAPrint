@@ -142,6 +142,9 @@ function EXCEL_Print($window){
 	if ($window -eq $null){
 		return
 	}
+
+	# なぜかここで少し待たないと印刷ボタンが押されない...
+	Start-Sleep -Millisecond 500
 	
 	# 印刷ボタンを押下(Alt+p,p)
 	$window.Keyboard.KeyPress([WindowsInput.Native.VirtualKeyCode]::MENU) >$null
