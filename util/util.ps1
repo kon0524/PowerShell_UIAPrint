@@ -29,7 +29,7 @@ function Set_ComboBox($dialog, $combobox_name, $value){
 # $dialog	[in]	ダイアログのWindowオブジェクト
 function Click_ButtonOK($dialog){
 	try{
-		($button = Get-UiaButton -InputObject $dialog -AutomationId '1' -Class 'Button' -Name 'OK' -ErrorAction Stop ) >$null
+		($button = Get-UiaButton -InputObject $dialog -Class 'Button' -Name 'OK' -ErrorAction Stop ) >$null
 		Invoke-UiaButtonClick -InputObject $button -ErrorAction Stop >$null
 	} catch {
 		return $False
