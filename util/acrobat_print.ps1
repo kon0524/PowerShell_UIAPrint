@@ -84,8 +84,8 @@ function ACROBAT_Start($FILEPATH, $DRVNAME, [ref]$result_process, [ref]$result_w
 	}
 	$result_app_dialog.value = $acro_dialog
 	
-  	# プリンターの選択コンボボックスの取得 (なぜかコンボボックス名が部数)
-	$combobox = Get-UiaComboBox -InputObject $acro_dialog -Class 'ComboBox' -Name '部数(C) :'
+  	# プリンターの選択コンボボックスの取得
+	$combobox = Get-UiaComboBox -InputObject $acro_dialog -Class 'ComboBox' -Name 'プリンター(N) :'
 	if ($combobox -eq $null){
  		Write-Warning -Message "プリンター設定が見つからない。処理を中断する"
  		return $False
